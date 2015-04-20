@@ -1,6 +1,10 @@
 .box {
   display:inline-block;
   background-color: black;
-  width:40px;
-  height:40px;
+  width:140px;
+  height:140px;
+}
+
+p {
+    color: #fff;
 }
