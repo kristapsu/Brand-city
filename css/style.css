@@ -1,10 +1,77 @@
-.box {
-  display:inline-block;
-  background-color: black;
-  width:140px;
-  height:140px;
+/** COMMON STYLES **/
+
+
+
+body {
+    margin: 0 0;
 }
 
-p {
+
+ul
+{
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: yellow;
+}
+
+
+
+/** CLEARFIX **/
+
+.clearfix::after {
+content: " ";
+display: table;
+clear: both;
+}
+
+
+
+
+/** HEADER **/
+
+.header-nav{
+    width:100%;
+    background-color: blue;
+}
+
+
+.logo-container{
+    display:block;
+    float: left;
+    padding-left:15%;    
+}
+
+.hn-list{
+    display:block;
+    float: right;
+    padding-right:15%;
+}
+
+.hn-list li{
+    display: inline-block;
+    padding: 0 20px;
     color: #fff;
 }
+
+.hn-list li a {
+    color: #ffffff;
+    padding: 5px;
+}
+
+.contacts-container {
+    border-right: 1px solid #ffffff;
+}
+
+.mybooking-container a{
+    border: 1px solid #fff;
+    border-radius: 8px;
+}
+
