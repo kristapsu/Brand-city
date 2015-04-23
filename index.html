@@ -7,31 +7,86 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
+        <!-- https://github.com/jquery/jquery-mousewheel   how to use 
+             http://foxarc.com/blog/article/111.htm      used script  -->
     </head>
     <body>
         <div class="wrapper">
             <header>
-                <nav class="header-nav clearfix">
-                    <div class="logo-container">LOGO
-                    </div>
-                    <ul class="hn-list">
-                        <li class="favorites-container">
-                        <a href="">41,768 USERS LOVE US</a>   
-                        </li>
-                        <li class="contacts-container">
-                        <a href="">+361 434 34343</a>    
-                        </li>     
-                        <li class="lang-container">
-                        <a href="">EN-GB-AUS</a>    
-                        </li> 
-                        <li class="currency-container">
-                        <a href="">Eur</a>    
-                        </li>  
-                        <li class="mybooking-container">
-                        <a href="">MyBooking</a>    
-                        </li>                          
-                    </ul>
+                <nav class="header-nav">
+                    <div class="header-nav-content">
+                        <div class="logo-container">
+                        <a href=""><img src="img/upper-logo.png"/></a>
+                        </div>                  
+                        <ul class="hn-list">
+                            <li class="favorites-container">
+                            <a href=""><i class="fa fa-heart"></i>&nbsp;41,768 <span>USERS LOVE US</span></a>   
+                            </li>
+                            <li class="contacts-container">
+                                <a href="">
+                                    <span class="cc-content-1">
+                                        <span>
+                                            <i class="fa fa-phone"></i>&nbsp;(+371) 6-601-0858
+                                        </span>
+                                        <span>
+                                            communication in english
+                                        </span>
+                                    </span>    
+                                    <span class="cc-content-2">
+                                        &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+                                    </span>
+                                </a>
+                            </li>  
+                            <li class="lang-container">
+                            <a href="">EN&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>    
+                            </li> 
+                            <li class="currency-container">
+                            <a href="">&#8364;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>    
+                            </li>  
+                            <li class="mybooking-container">
+                            <a href="">My Booking&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down" style="display:inline"></i></a>    
+                            </li>                          
+                        </ul>
+                    </div>    
                 </nav>
+                <div id="slideshow" class="header-banner">
+                    <div class=hb-heading>
+                    <h1>Rent car with AVIS in Milan</h1>  
+                    <h3>Millions of people set off on vacation every day.</br>We help them pick up their flights and accommodation cheaply, easily and fast.</h3>
+                    </div>
+                    <div class="hb-searchbar">
+                        
+                    </div>
+                    <table class="hb-benefits">
+                        <tr>
+                            <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Collision Damage Waiver
+                            </td>    
+                            <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Unlimited mileage
+                            </td> 
+                            <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Local taxes
+                            </td> 
+                            <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Third Party Liability Insurance</br>
+                            </td>
+                        </tr>
+                        <tr>
+                           <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Theft Protection
+                           <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Road Fund Tax (RFT)
+                            </td> 
+                           <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;Premium Location Fee
+                            </td> 
+                           <td>
+                            <i class="fa fa-check"></i>&nbsp;&nbsp;24 Hour Road Assistance
+                            </td>                             
+                        </tr>
+                    </table>
+                </div>
             </header>
             <section class="slider-menu">
                 <div class="sm-container">
@@ -65,7 +120,7 @@
                 <div class="upper-footer">
                 </div>
                  <div class="middle-footer">
-                    <nav class="header-nav">
+                    <nav class="footer-nav">
                     </nav>
                     <div class="icon-container">
                     </div>

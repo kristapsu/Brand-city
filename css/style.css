@@ -1,6 +1,8 @@
 /** COMMON STYLES **/
 
-
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0 0;
@@ -16,15 +18,19 @@ a {
     text-decoration: none;
 }
 
+/** Max. content width **/
 .wrapper {
     max-width: 1366px;
     margin: 0 auto;
     background-color: yellow;
 }
 
+/** Make icons to be inline with text **/
+.fa {
+    display:inline;
+}
 
-
-/** CLEARFIX **/
+/** CLEARFIX FOR FLOATS **/
 
 .clearfix::after {
 content: " ";
@@ -36,42 +42,140 @@ clear: both;
 
 
 /** HEADER **/
+/** NAV **/
+
 
 .header-nav{
+    display: table;
     width:100%;
-    background-color: blue;
+    height: 64px;
+    background-color:#1a5880;
+    text-align: center;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(50, 50, 50, 0.34);
+    -moz-box-shadow:    0px 4px 8px 0px rgba(50, 50, 50, 0.34);
+    box-shadow:         0px 4px 8px 0px rgba(50, 50, 50, 0.34);
+}
+
+.header-nav-content {
+    display:table-cell;
+    vertical-align: middle;
 }
 
 
+.logo-container,
+.hn-list{
+    display:inline-block;
+    vertical-align: middle;
+}
+
 .logo-container{
-    display:block;
-    float: left;
-    padding-left:15%;    
+margin: 0;   
+padding: 0;
 }
 
 .hn-list{
-    display:block;
-    float: right;
-    padding-right:15%;
+margin:0;
+padding: 0;
 }
 
 .hn-list li{
     display: inline-block;
-    padding: 0 20px;
+    padding: 10px 15px;
     color: #fff;
+    vertical-align: middle;    
 }
 
 .hn-list li a {
     color: #ffffff;
-    padding: 5px;
 }
+
+.hn-list li a {
+    color: #ffffff;
+    padding: 10px 10px;
+}
+
+
+.favorites-container span {
+    font-size:14px;
+    color: #a8b8c6; 
+}
+
 
 .contacts-container {
     border-right: 1px solid #ffffff;
+    text-align: right;
 }
+
+
+.cc-content-1,
+.cc-content-2 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.cc-content-1 span:first-child {
+    display:block;
+}
+
+.cc-content-1 span:nth-child(2) {
+    display:block;
+    font-size:12px;
+    color: #a8b8c6;
+}
+
 
 .mybooking-container a{
     border: 1px solid #fff;
     border-radius: 8px;
 }
 
+/** HEADER **/
+/** BANNER **/
+
+
+.header-banner {
+    /** background-image: url("../img/header-background-1.png"); **/
+    height:486px;
+}
+
+
+
+.hb-heading,
+.hb-searchbar,
+.hb-benefits {
+    max-width:960px;
+    margin:0 auto;
+}
+
+
+.hb-heading {
+    color: #ffffff;
+    text-align: center;
+    padding-top:120px;
+    padding-bottom:20px;
+}
+
+.hb-heading h1 {
+    font-size: 48px;
+    margin: 0;
+    text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.45);
+}
+
+.hb-heading h3 {
+    font-size: 22px;
+    margin: 0;
+}
+
+
+
+.hb-benefits {
+    padding-top:180px;    
+    text-align: left;
+    color: #ffffff;
+}
+
+.hb-benefits tr td {
+    padding: 5px 25px;
+    font-size: 14.16px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+}
