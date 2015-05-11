@@ -1,3 +1,5 @@
+// IMAGE ROTATION 
+
 
 var imageArray = new Array(); // leave as is.
 
@@ -24,3 +26,18 @@ if( i > (imageArray.length - 1) ) { i = 0; }
 setTimeout('publishPicture('+i+')',switchMilliseconds);
 }
 publishPicture(0);
+
+
+
+
+
+
+// KNOB STYLES
+
+$( document ).ready(function() {
+ 
+$(".knob").css('font-size','30px');
+$(".knob").css('height','28px');
+$(".knob").css('margin-top','22px');
+
+});
