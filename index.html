@@ -1,237 +1,478 @@
 <!doctype html>
 <html>
     <head>
+        <!-- BLOKA ELEMENTIEM NAV HEIGHT:100%; -->
+        <!-- bloka elementiem - margin bottom no augsejaa elementa, parklaaseis ar margin top no apakseeja elemnta!! -->
         <meta charset="utf-8">
         <title>Brand City</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="lib/font-awesome-4.3.0/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="lib/font-awesome-4.3.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="lib/flag-icon-css-master/css/flag-icon.css">
+        
         <!-- https://github.com/jquery/jquery-mousewheel   how to use 
              http://foxarc.com/blog/article/111.htm      used script  -->
-        <script src="lib/jquery-2.1.3.min.js"></script>     
-        <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
-        <script src="lib/jQuery-Knob-master/dist/jquery.knob.min.js"></script> 
-        <script type="text/javascript" src="lib/raty-2.7.0/lib/jquery.raty.js"></script>
-        <!-- KNOB SCRIPT -->   
-        <script>
-            $(function($) {
+            
+  
+        <!-- STAR-RATING-->
+        <link rel="stylesheet" href="lib/raty-2.7.0/lib/jquery.raty.css">
+        
+        <!-- OWN CAROUSELL -->
+        <link rel="stylesheet" href="lib/owl.carousel/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="lib/owl.carousel/owl-carousel/owl.theme.css">
+        <link rel="stylesheet" href="css/style.css">
 
-                $(".knob").knob({
-                    change : function (value) {
-                        //console.log("change : " + value);
-                    },
-                    release : function (value) {
-                        //console.log(this.$.attr('value'));
-                        console.log("release : " + value);
-                    },
-                    cancel : function () {
-                        console.log("cancel : ", this);
-                    },
-                    /*format : function (value) {
-                        return value + '%';
-                    },*/
-                    draw : function () {
-
-                        // "tron" case
-                        if(this.$.data('skin') == 'tron') {
-
-                            this.cursorExt = 0.3;
-
-                            var a = this.arc(this.cv)  // Arc
-                                , pa                   // Previous arc
-                                , r = 1;
-
-                            this.g.lineWidth = this.lineWidth;
-
-                            if (this.o.displayPrevious) {
-                                pa = this.arc(this.v);
-                                this.g.beginPath();
-                                this.g.strokeStyle = this.pColor;
-                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
-                                this.g.stroke();
-                            }
-
-                            this.g.beginPath();
-                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
-                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
-                            this.g.stroke();
-
-                            this.g.lineWidth = 2;
-                            this.g.beginPath();
-                            this.g.strokeStyle = this.o.fgColor;
-                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-                            this.g.stroke();
-
-                            return false;
-                        }
-                    }
-                });
-
-                // Example of infinite knob, iPod click wheel
-                var v, up=0,down=0,i=0
-                    ,$idir = $("div.idir")
-                    ,$ival = $("div.ival")
-                    ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
-                    ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
-                $("input.infinite").knob(
-                                    {
-                                    min : 0
-                                    , max : 20
-                                    , stopper : false
-                                    , change : function () {
-                                                    if(v > this.cv){
-                                                        if(up){
-                                                            decr();
-                                                            up=0;
-                                                        }else{up=1;down=0;}
-                                                    } else {
-                                                        if(v < this.cv){
-                                                            if(down){
-                                                                incr();
-                                                                down=0;
-                                                            }else{down=1;up=0;}
-                                                        }
-                                                    }
-                                                    v = this.cv;
-                                                }
-                                    });
-            });
-        </script>
         
     <!-- STAR RATING SCRIPT -->    
 	<script type="text/javascript">
-		$(function()
-		{
-			/*
-				Basic Example with custom image path
-				path : indicate custom path to the star image
-			*/
-			$('#star').raty({ path: 'lib/raty-2.7.0/lib/images' });
-			
-			
-			/*
-				Predefined score with half star,
-				score : You can pass any value for it, not necessarily,
-						a data- value.
-						You can use a rating-score too.
-						but then 
-						code will be return $(this).attr('rating-score');
-				half 	: that will enable user to add half star rating
-				target  : define the rating hint container
-				targetKeep : this will allow used to
-					keep selected result inside hint container
-					defining false will loose selected value
-			*/
-
-			$('#predefined-star').raty(
-			{
-				path: 'lib/raty-2.7.0/lib/images',
-				half: true,
-				target: '#result',
-				targetKeep: true,
-				score: function()
-				{
-					return $(this).attr('data-score');
-				}
-			});
-		});
+		
 	</script>
     </head>
     <body>
         <div class="wrapper">
+            <!-- Header menu -->
             <header>
                 <div class="content-wrapper">   
                     <nav class="header-nav">
-                        <div class="header-nav-content">
-                            <div class="logo-container">
-                            <a href=""><img src="img/upper-logo.png"/></a>
-                            </div>                  
-                            <ul class="hn-list">
-                                <li class="favorites-container">
-                                <a href=""><i class="fa fa-heart"></i>&nbsp;41,768 <span>USERS LOVE US</span></a>   
-                                </li>
-                                <li class="contacts-container">
-                                    <a href="">
-                                        <span class="cc-content-1">
-                                            <span>
-                                                <i class="fa fa-phone"></i>&nbsp;(+371) 6-601-0858
-                                            </span>
-                                            <span>
-                                                communication in english
-                                            </span>
-                                        </span>    
-                                        <span class="cc-content-2">
-                                            &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+                        <ul class="hn-list">
+                            <li class="logo-container">
+                                <a href=""><img src="img/upper-logo.png"/></a>
+                            </li>  
+                            <li class="favorites-container">
+                                <a href="">
+                                    <span>
+                                        <i class="fa fa-heart"></i>&nbsp;41,768
+                                    </span> 
+                                    <span>
+                                      users love us
+                                    </span>
+                                </a>   
+                            </li>
+                            <li class="contacts-container">
+                                <a href="">
+                                    <span class="cc-content-1">
+                                        <span>
+                                            <i class="fa fa-phone fa-lg"></i>&nbsp;(+371) 6-601-0858
                                         </span>
-                                    </a>
-                                </li>  
-                                <li class="lang-container">
-                                <a href="">EN&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>    
-                                </li> 
-                                <li class="currency-container">
-                                <a href="">&#8364;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>    
-                                </li>  
-                                <li class="mybooking-container">
-                                <a href="">My Booking&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down" style="display:inline"></i></a>    
-                                </li>                          
+                                        <span>
+                                            communication in english
+                                        </span>
+                                    </span>    
+                                    <span class="cc-content-2">
+                                        &nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i>
+                                    </span>
+                                </a>
+                            </li>  
+                            <li class="lang-container">
+                            <a href="">EN&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a> 
+                            
+                            <!--
+                            
+                            <ul class="menu">
+                                <li class="menu-item logo">
+                                </li>
+                                <li ckass="menu-item followers">
+                                </li>
+                                <li class="menu-item lang-select">
+                                </li>
                             </ul>
-                        </div>   
+                            
+                            
+                            <ul class="plus-list">
+                                <li><flag....class="flag"-v></li>
+                                <li class="menu-item logo">Latvija</li>
+                             </ul>
+                             
+                             .plus-list flag-lf:before{
+                             img:url(flag-lv);
+                             }
+                             
+                             
+                             
+                             vai 
+                             
+                             <ul class="flag-list">
+                                <li><<img class="flag"...>Latvia</li>
+                             </ul>
+                             
+                             
+                             
+                             .flag-list .flag{
+                             position: abosolute;
+                             left:- 30px;
+                             top: 5px;
+                             }
+                             
+                             
+                            -->
+                            
+                            </li> 
+                            <li class="currency-container">
+                            <a href="">&#8364;&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down"></i></a>    
+                            </li>  
+                            <li class="mybooking-container">
+                            <a href="">My Booking&nbsp;&nbsp;&nbsp;<i class="fa fa-angle-down" style="display:inline"></i></a>    
+                            </li>                          
+                        </ul>
                     </nav>
                 </div>    
             </header>
-            <section class="spotlight">  
-                <div id="slideshow" class="header-banner">
-                    <div class="content-wrapper">   
-                        <div class=hb-heading>
-                            <h1>Rent car with AVIS</h1>
-                                <div class="demo" style="background-color: transparent; color:#FFF; display:inline-block;">
-                                    <input style="font-size:30px;" class="knob" data-width="75" data-displayPrevious=true data-bgColor="transparent" data-fgColor="#ffffff" data-height="100" data-step="0.1" data-thickness=".1" value="8.5" data-min="0" data-max="10" readOnly>
-                                </div>
-                             <h1>in Milan</h1>  
-                            <h3>Millions of people set off on vacation every day.<br>We help them pick up their flights and accommodation cheaply, easily and fast.</h3>
-                        </div>
-                        <div class="hb-searchbar">
-                            
-                        </div>
-                        <div class="hb-benefits">
-                            <div class="hb-benefits-row">
-                                <ul>
-                                    <li>Collision Damage Waiver</li>
-                                    <li>Theft Protection</li>
-                                    <li>Unlimited mileage</li>
-                                    <li>Road Fund Tax (RFT)</li>
-                                    <li>Local taxes</li>
-                                    <li>Premium Location Fee</li>
-                                    <li>Third Party Liability Insurance</li>
-                                    <li>24 Hour Road Assistance</li>
-                                </ul>
+            <!-- Header banner, changing background img -->
+            <section class="spotlight" id="slideshow">  
+                <div class="content-wrapper">   
+                    <div class=hb-heading>
+                        <h1>Rent car with AVIS</h1>
+                            <div class="demo" style="background-color: transparent; color:#FFF; display:inline-block;">
+                                <input style="font-size:30px;" class="knob" data-width="75" data-displayPrevious=true data-bgColor="transparent" data-fgColor="#ffffff" data-height="100" data-step="0.1" data-thickness=".1" value="8.5" data-min="0" data-max="10" readOnly>
                             </div>
-                        </div>
-                    </div>    
-                </div>
+                         <h1>in Milan</h1>  
+                        <h3>Millions of people set off on vacation every day.<br>We help them pick up their flights and accommodation cheaply, easily and fast.</h3>
+                    </div>
+                    <div class="hb-searchbar">
+                        
+                    </div>
+                    <div class="hb-benefits common-list-rows">
+                        <ul>
+                            <li>Collision Damage Waiver</li>
+                            <li>Theft Protection</li>
+                        </ul>
+                        <ul>
+                            <li>Unlimited mileage</li>
+                            <li>Road Fund Tax (RFT)</li>
+                        </ul>
+                        <ul>
+                            <li>Local taxes</li>
+                            <li>Premium Location Fee</li>
+                        </ul>
+                        <ul>
+                            <li>Third Party Liability Insurance</li>
+                            <li>24 Hour Road Assistance</li>
+                        </ul>
+                    </div>
+                </div>    
             </section>
+            <!-- Hot deals in milan from AVIS -->
             <section class="slider-menu">
-                <div class="sm-container">
+                <div class="content-wrapper">
+                    <div class="sm-header">
+                        <h4>Hot deals in Milan from AVIS</h4>
+                    </div>
+                </div>   
+                <!-- http://jsfiddle.net/wZD6c/ -->
+                <div class="content-wrapper-carousel">
+                    <div class="sm-content">
+                        <div id="owl-demo" class="owl-carousel">
+                            <div class="car-container">
+                                <a class="item link item-carousel"><h1>1</h1></a>
+                            </div>
+                            <div class="car-container">
+                                <a class="item link item-carousel"><h1>2</h1></a>
+                            </div>    
+                            <div class="car-container">    
+                                <a class="item link item-carousel"><h1>3</h1></a>
+                            </div>    
+                            <div class="car-container active">
+                                <a class="item link item-carousel"><h1>4</h1></a>
+                            </div>
+                            <div class="car-container">
+                                <a class="item link item-carousel"><h1>5</h1></a>
+                            </div>
+                            <div class="car-container">
+                                <a class="item link item-carousel"><h1>6</h1></a>
+                            </div>
+                            <div class="car-container">
+                                <a class="item link item-carousel"><h1>7</h1></a>    
+                            </div>    
+                        </div>
+                    </div>
+                </div>    
+                <div class="content-wrapper">
+                    <div class="sm-toplocations">
+                        <h4>Top locations in Milan</h4>
+                        <ul class="top-location-list">
+                            <li><a href="">Milan Malpensa Airport (MXP)</a></li>
+                            <li><a href="">Airport Bergamo</a></li>
+                            <li><a href="">Airport Linate</a></li>
+                            <li><a href="">Downtown</a></li>
+                            <li><a href="">Milan Exhibition Center</a></li>
+                            <li><a href="">Largo Augusto</a></li>
+                        </ul>
+                    </div>
                 </div>            
             </section>
+            <!-- AVIS Customer Ratings in Milan -->
             <section class="customer-reviews">
-                <div class="cr-container">
-                    <div class="cr-heading">
+                <div class="content-wrapper">
+                    <div class="cr-heading clearfix">
+                        <div class="cr-heading-text">
+                          <h2>AVIS Customer Ratings in <a href="">Milan</a></h2>
+                        </div>
+                        <div class="cr-heading-logo">
+                            <a href=""><img src="img/AVIS-logo.png"/></a>
+                        </div>
                     </div>
-                    <div class="cr-values">
-                    </div>              
-                    <div class="cr-reviews">
-                    </div>     
-                    <div class="cr-reviews-more">
-                    </div>                   
+                    <div class="cr-main-content clearfix">
+                    
+                        <div class="cr-values">
+                        
+                            <div class="cr-score-total">
+                                <div class="demo" style="background-color: transparent; display:inline-block;">
+                                    <input style="font-size:30px; color: #ffffff;" class="knob" data-width="75" data-displayPrevious=true data-fgColor="#0073b5" data-height="80" data-step="0.1" data-thickness=".1" value="8.3" data-min="0" data-max="10" readOnly>
+                                </div>  
+                                <div class="cr-rating-value">Excellent</div>
+                                <div class="cr-rating-count"><a href="">150+ reviews</a></div>
+                            </div>
+                            <div class="cr-score-details">
+                                <dl class="cr-question clearfix">
+                                    <dt>Overall value for money of your car rental</dt>
+                                    <dd>8.3</dd> 
+                                </dl>     
+                                <dl class="cr-question clearfix">    
+                                    <dt>How easy was it to find pickup location?</dt>
+                                    <dd>8.2</dd>
+                                </dl>     
+                                <dl class="cr-question clearfix">    
+                                    <dt>Work efficiency of the car rental agents</dt>
+                                    <dd>8.4</dd> 
+                                </dl>     
+                                <dl class="cr-question clearfix">    
+                                    <dt>Time spent picking up the car</dt>
+                                    <dd>8.5</dd> 
+                                </dl>     
+                                <dl class="cr-question clearfix">    
+                                    <dt>ime spent dropping off the car</dt>
+                                    <dd>7.9</dd>
+                                </dl>     
+                                <dl class="cr-question clearfix">    
+                                    <dt>Car cleanliness</dt>
+                                    <dd>7.6</dd>
+                                </dl>     
+                                <dl class="cr-question clearfix">    
+                                    <dt>Overall condition of the car</dt>
+                                    <dd>7.8</dd> 
+                                </dl>                               
+                            </div>
+                            
+                        </div>   
+                        
+                        <div class="cr-reviews">
+                        
+                            <table class="cr-review-block">
+                                <tr class="cr-review-row-1">
+                                    <td class="cr-review-person-info clearfix" colspan="2">
+                                        <span class="cr-review-giver-name">
+                                            Lelde
+                                        </span>
+                                        <span class="flag-icon flag-icon-lv"></span>
+                                        <span class="cr-review-location">
+                                           Latvia
+                                        </span>                                    
+                                        <span class="cr-review-date">
+                                           —  August 18, 2014
+                                        </span>
+                                        <span class="cr-review-giver-score">
+                                           Perfect <span class="cr-review-giver-score-number">8.3</span>
+                                        </span>
+                                    </td>    
+                                </tr>
+                                <tr class="cr-review-row-2">
+                                    <td class="cr-review-plus">
+                                        Perfect location. Easy to reach from airport TXL (TXL bus). Very convenient for shopping purposes, all popular shops are near- Primark, C&A,Galeria Kaufhof, Alexa... Breakfast is very plentiful.
+                                    </td>
+                                    <td class="cr-review-minus">
+                                        Quadruaple room was very small.
+                                    </td>                                    
+                                </tr>
+                            </table>
+                     
+                            <table class="cr-review-block">
+                                <tr class="cr-review-row-1">
+                                    <td class="cr-review-person-info clearfix" colspan="2">
+                                        <span class="cr-review-giver-name">
+                                            Maris
+                                        </span>
+                                        <span class="flag-icon flag-icon-lv"></span>
+                                        <span class="cr-review-location">
+                                           Latvia
+                                        </span>                                    
+                                        <span class="cr-review-date">
+                                           —  June 22, 2014
+                                        </span>
+                                        <span class="cr-review-giver-score">
+                                           Very Good <span class="cr-review-giver-score-number">7.8</span>
+                                        </span>
+                                    </td>    
+                                </tr>
+                                <tr class="cr-review-row-2">
+                                    <td class="cr-review-plus">
+                                        The location is excellent: 5 minutes walking from the Alexanderplatz station The breakfast is very good and the room is very comfortable and exactly as in the photos.
+                                    </td>
+                                    <td class="cr-review-minus">
+                                        I arrived very late at the hotel (11pm) and the room service woke me up at 8:30am after the first night. When I arrived at the hotel on the third night, the window was… Read more
+                                    </td>                                    
+                                </tr>
+                            </table>
+                            
+                            <table class="cr-review-block">
+                                <tr class="cr-review-row-1">
+                                    <td class="cr-review-person-info clearfix" colspan="2">
+                                        <span class="cr-review-giver-name">
+                                            Joana
+                                        </span>
+                                        <span class="flag-icon flag-icon-pt"></span>
+                                        <span class="cr-review-location">
+                                           Portugal
+                                        </span>                                    
+                                        <span class="cr-review-date">
+                                           —  June 22, 2014
+                                        </span>
+                                        <span class="cr-review-giver-score">
+                                           Exceptional <span class="cr-review-giver-score-number">10</span>
+                                        </span>
+                                    </td>    
+                                </tr>
+                                <tr class="cr-review-row-2">
+                                    <td class="cr-review-plus">
+                                        I did like everything about this Hotel.
+                                    </td>
+                                    <td class="cr-review-minus">
+                                        I did like everything about this Hotel.
+                                    </td>                                    
+                                </tr>
+                            </table>
+                            
+                            <table class="cr-review-block">
+                                <tr class="cr-review-row-1">
+                                    <td class="cr-review-person-info clearfix" colspan="2">
+                                        <span class="cr-review-giver-name">
+                                            Maria
+                                        </span>
+                                        <span class="flag-icon flag-icon-bq"></span>
+                                        <span class="cr-review-location">
+                                           Netherlands
+                                        </span>                                    
+                                        <span class="cr-review-date">
+                                           —  December 2, 2014
+                                        </span>
+                                        <span class="cr-review-giver-score">
+                                           Awesome <span class="cr-review-giver-score-number">9.0</span>
+                                        </span>
+                                    </td>    
+                                </tr>
+                                <tr class="cr-review-row-2">
+                                    <td class="cr-review-plus">
+                                        The location is excellent: 5 minutes walking from the Alexanderplatz station The breakfast is very good and the room is very comfortable and exactly as in the photos.
+                                    </td>
+                                    <td class="cr-review-minus">
+                                        Almost non-existent wifi, uncomfortable room
+                                    </td>                                    
+                                </tr>
+                            </table>
+                            
+                            <table class="cr-review-block">
+                                <tr class="cr-review-row-1">
+                                    <td class="cr-review-person-info clearfix" colspan="2">
+                                        <span class="cr-review-giver-name">
+                                            Bernadette
+                                        </span>
+                                        <span class="flag-icon flag-icon-bq"></span>
+                                        <span class="cr-review-location">
+                                           Netherlands
+                                        </span>                                    
+                                        <span class="cr-review-date">
+                                           —  December 2, 2014
+                                        </span>
+                                        <span class="cr-review-giver-score">
+                                           Exceptional <span class="cr-review-giver-score-number">9.8</span>
+                                        </span>
+                                    </td>    
+                                </tr>
+                                <tr class="cr-review-row-2 clearfix">
+                                    <td class="cr-review-plus">
+                                        The location is excellent: 5 minutes walking from the Alexanderplatz station The breakfast is very good and the room is very comfortable and exactly as in the photos.
+                                    </td>
+                                    <td class="cr-review-minus">
+                                        Nothing
+                                    </td>                                    
+                                </tr>
+                            </table>
+                            <table class="cr-review-block">
+                                <tr class="cr-review-row-3">
+                                    <td class="cr-reviews-more">
+                                        <span>
+                                            <a href=""><i class="fa fa-angle-double-right"></i> All reviews about AVIS rental service in Milan</a>
+                                        </span>
+                                    </td>                                    
+                                </tr>
+                            </table>  
+                        </div>  
+                    </div>    
                 </div>            
             </section>     
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!-- AVIS in other cities of Italy -->
             <section class="other-cities">
-                <div class="oc-container">
+                <div class="content-wrapper">
+                    <div class="oc-content1">
+                        <h4>AVIS in other cities of Italy</h4>
+                    </div>
+                    <div class="oc-content2 common-list-rows clearfix">
+                        <ul>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Venice</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Venice</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Venice</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Venice</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Rome</span></a></li>
+                            <li><a href="">AVIS Car Rentals in <span>Milan</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="oc-content3">
+                        <span>
+                            <a href=""><i class="fa fa-angle-double-right"></i> All cities in Italy where AVIS works</a>
+                        </span>
+                    </div>                   
                 </div>            
             </section> 
+            
+            
+            
+            
+            
+            
+            
+            <!-- OTHER TOP CAR RENTAL SUPPLIERS IN MILAN -->
             <section class="other-car-rentals">
                 <div class="content-wrapper">
                     <h4>OTHER TOP CAR RENTAL SUPPLIERS IN MILAN</h4>
@@ -279,6 +520,13 @@
                     </div>                       
                 </div>
             </section>
+            
+            
+            
+            
+            
+            
+            <!-- Rent car worldwide with EconomyBookings -->
             <section class="economy-bookings">
                 <div class="content-wrapper"> 
                     <div class="eb-content-1">
@@ -298,7 +546,7 @@
                                 <ul class="fa-ul">
                                     <li><i class="fa-li fa fa-check fa-lg"></i>24/7 multi-lingual customer support</li>
                                     <li><i class="fa-li fa fa-check fa-lg"></i>No credit card or amendment fees</li>
-                                    <li><img width="118" height"64" src="img/Norton-Secured-Logo.png" alt="Norton-Secured-Logo"></li>
+                                    <li><img width="118" height="64" src="img/Norton-Secured-Logo.png" alt="Norton-Secured-Logo"></li>
                                 </ul>
                             </div>  
                         </div>     
@@ -306,7 +554,7 @@
                             <div class="eb-inner-col-3">
                                 <div class="eb-inner-row-1 clearfix">
                                     <h6>Joanna</h6>
-                                    <div id="predefined-star" data-score="4.5"></div> <div id="result" style="font-size: 15px !important;"></div>
+                                    <div class="js-stars" data-score="5"></div>
                                 </div>	
                                 <div class="eb-inner-row-2">
                                     <p>
@@ -345,46 +593,64 @@
                         </div>   
                     </div>                            
                 </div>
-            </section>    
+            </section>   
+            
+            
+            
+            
+            <!-- FOOTER starts here -->
             <footer>
-                <div class="upper-footer">
+                <div class="upper-footer-1">
                     <div class="content-wrapper">
                         <!-- Phone app banner -->
                         <div class="uf-container">
+                            <img class="phone-img" src="img/upper-footer-phone.png"/>
                             <h1>Book car rentals<br> from your phone</h1>
-                            <p>From any kind of Android smartphone, you can easily and<br> quickly book a vehicle with the EconomyBookings App. Just/br> select your branch and vehicle and complete your booking!</p>
-                            <a href="">
+                            <p>From any kind of Android smartphone, you can easily and<br> quickly book a vehicle with the EconomyBookings App. Just<br> select your branch and vehicle and complete your booking!</p>
+                            <div class="button-container">
                                 <button class="google-play-btn">
                                     <img class="button-icon" src="img/footer-buttons/play-triangle.png"/>   
                                     <span>Available on</span>
-                                    <img class="button-text" src="img/footer-buttons/play-text.png"/>   
+                                    <img class="button-text-img" src="img/footer-buttons/play-text.png"/>   
                                 </button>
-                            </a>
-                            <a href="">
+                                <div class="rating-container">
+                                    <div class="js-stars" data-score="4.8"></div>
+                                    <span>(67)</span>
+                                </div>
+                            </div>
+                            <div class="button-container">
                                 <button class="appstore-btn">
                                     <img class="button-icon" src="img/footer-buttons/app-triangle.png"/>
                                     <span>Available on</span>
-                                    <img class="button-text" src="img/footer-buttons/app-text.png"/>   
+                                    <img class="button-text-img" src="img/footer-buttons/app-text.png"/>   
                                 </button>
-                            </a>
-                        	<div id="predefined-star" data-score="4.5"></div> <div id="result" style="font-size: 15px !important;"></div>
-                        	<a class="partners-btn" href=""><img src="img/footer-buttons/Auto-renta-button.png"/></a> 
-                        	<a class="partners-btn" href=""><img src="img/footer-buttons/crn-button"/></a> 
+                                <div class="rating-container">
+                                    <div class="js-stars" data-score="4.6"></div>
+                                    <span>(39)</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+                <div class="upper-footer-2">
+                    <div class="content-wrapper">
+                        <!-- Partner buttons -->
+                        <a class="partners-btn" href=""><img src="img/footer-buttons/Auto-renta-button.png"/></a> 
+                        <a class="partners-btn" href=""><img src="img/footer-buttons/crn-button"/></a> 
+                    </div>    
                 </div>
                 <div class="middle-footer">
                     <div class="content-wrapper clearfix">
                         <!-- Footer navigation starts here -->
-                        <nav class="footer-nav">
-                            <ul class="footer-nav-list">
+                        <nav class="footer-nav clearfix">
+                            <ul>
                                 <a href=""><li>Company</li></a>
                                 <a href=""><li>About Us</li></a>
                                 <a href=""><li>News</li></a>
                                 <a href=""><li>Cooperation</li></a>
                                 <a href=""><li>Contacts</li></a>
                             </ul>
-                             <ul class="footer-nav-list">
+                             <ul>
                                 <a href=""><li>Useful</li></a>
                                 <a href=""><li>Destination guide</li></a>
                                 <a href=""><li>Where Rent a Car</li></a>
@@ -392,13 +658,13 @@
                                 <a href=""><li>Terms of use</li></a>
                                 <a href=""><li>Mobile Apps</li></a>
                             </ul>     
-                             <ul class="footer-nav-list">
+                             <ul>
                                 <a href=""><li>Help</li></a>
                                 <a href=""><li>Privacy Policy</li></a>
                                 <a href=""><li>Terms</li></a>
                                 <a href=""><li>FAQ</li></a>
                             </ul>   
-                            <ul class="footer-nav-list">
+                            <ul>
                                 <a href=""><li>Partner Programs</li></a>
                                 <a href=""><li>Affilate Programs For Publishers</li></a>
                                 <a href=""><li>For Car Rental Suppliers and Brokers</li></a>
@@ -407,21 +673,21 @@
                             </ul>   
                         </nav>
                         <!-- Footer social icons -->
-                        <div class="icon-container">
-                            <ul class="footer-nav-icon-list">
+                        <div class="footer-form">
+                            <ul class="footer-form-icon-list">
                                 <a href=""><li><i class="fa fa-facebook fa-2x"></i></li></a>
                                 <a href=""><li><i class="fa fa-youtube fa-2x"></i></li></a>
                                 <a href=""><li><i class="fa fa-google-plus fa-2x"></i></li></a>
                             </ul>
-                        </div>
-                        <!-- Footer subscribe form -->
-                        <div class="subscribe-container">
-                            <h5>Subscribe to our best deals</h5>
-                            <p>Car hire at best price.<br>Subscribe to our Exclusive Offers.</p> 
-                            <form action="POST">
-                              <input type="email" name="email-submit" placeholder="Your email"><br>
-                              <input class ="btn-yellow" type="submit" value="Subscribe">
-                            </form>
+                            <!-- Footer subscribe form -->
+                            <div class="subscribe-container">
+                                <h5>Subscribe to our best deals</h5>
+                                <p>Car hire at best price.<br>Subscribe to our Exclusive Offers.</p> 
+                                <form action="POST">
+                                  <input type="email" name="email-submit" placeholder="Your email"><br>
+                                  <input class ="btn-yellow" type="submit" value="Subscribe">
+                                </form>
+                            </div>                            
                         </div>
                     </div>
                 </div>
@@ -434,16 +700,16 @@
                        </div>
                        <div class="lf-container-2">
                             <a href="">
-                                <button class="bl-google-play-btn">
+                                <button class="bl-appstore-btn">
                                     <img class="bl-button-icon" src="img/footer-buttons/bl-app-apple.png"/>   
                                     <span>Download on the</span>
-                                    <img class="bl-button-text" src="img/footer-buttons/bl-app-text.png"/>   
+                                    <img class="bl-button-text" src="img/footer-buttons/bl-app-text.png"/> 
                                 </button>
                             </a>
                             <a href="">
-                                <button class="bl-appstore-btn">
+                                <button class="bl-google-play-btn">
                                     <span>Android app on</span>
-                                    <img class="bl-button-icon2" src="img/footer-buttons/bl-play.png"/>   
+                                    <img class="bl-button-icon-text" src="img/footer-buttons/bl-play.png"/>   
                                 </button>
                             </a>
                        </div>
@@ -454,6 +720,39 @@
                 </div>            
             </footer>
         </div>    
-    <script src="js/script.js"></script> 
+        
+      
+      
+    <script src="lib/jquery-2.1.3.min.js"></script>     
+    <!-- peec jquery var piesleegt paarejos js failus -->
+    <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->  
+        
+    <!-- STAR-RATING-->
+    <script type="text/javascript" src="lib/raty-2.7.0/lib/jquery.raty.js"></script>  
+    
+    <!-- KNOB -->
+    <script src="lib/jQuery-Knob-master/dist/jquery.knob.min.js"></script>
+    
+    <!-- OWL CAROUSELL -->
+    <script src="lib/owl.carousel/owl-carousel/owl.carousel.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>   
+    
+    
+    
+    <!-- <div class="js-owl-carousel">
+            <div class="js-own-element">
+                <div class="car-card active">
+                    
+                </div>
+                 <div class="car-card">
+                    
+                </div>               
+            </div>
+        </div>
+        
+        atseviski stili prieks katras masinas, visu liek ieksa karuselii
+    -->
     </body>
 </html>

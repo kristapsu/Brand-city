@@ -1,4 +1,4 @@
-/** COMMON STYLES **/
+/* BASE RULES */
 
 * {
     box-sizing: border-box;
@@ -10,8 +10,7 @@ body {
 }
 
 
-ul
-{
+ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
@@ -21,6 +20,11 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 48px;
+    margin: 0;
+}
 
 h2 {
     font-family: 'Open Sans', sans-serif;
@@ -58,21 +62,6 @@ p {
     margin: 0;
 }
 
-
-/** Max. page width **/
-.wrapper {
-    max-width: 1366px;
-    margin: 0 auto;
-    background-color: yellow;
-}
-
-/** Max. content width **/
-.content-wrapper {
-    margin: 0px auto;
-    max-width: 960px;    
-}
-
-
 /** Make icons to be inline with text **/
 .fa {
     display:inline;
@@ -89,7 +78,48 @@ clear: both;
 
 
 
-/** HEADER **/
+
+/* LAYOUT RULES */
+
+
+/** Max. page width **/
+.wrapper {
+    max-width: 1366px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/** Max. content width **/
+.content-wrapper {
+    margin: 0px auto;
+    max-width: 960px;    
+}
+
+.content-wrapper-carousel {
+    margin: 0px auto;
+    background-color: #FFFFFF;
+}
+
+
+
+/* MODULE RULES */
+
+
+
+/** Common 4 row lists **/
+.common-list-rows ul {
+    width: 25%;
+    float: left;
+}
+.common-list-rows ul li {
+    padding: 5px 0;
+    position: relative;
+}
+
+
+
+/** Upper header (nav) **/
+
 
 header {
     position: relative;
@@ -99,148 +129,550 @@ header {
     box-shadow:         0px 4px 8px 0px rgba(50, 50, 50, 0.34);
 }
 
-/** NAV **/
+    .header-nav{
+        width:100%;
+        background-color:#1a5880;
+        text-align: center;
+    }
+
+        .hn-list{
+            display:inline-block;
+            margin: 0;   
+            padding: 16px 0;
+        }
+
+            .hn-list li{
+                display: inline-block;
+                padding: 0 8px;
+                vertical-align: middle;  
+            }
+
+                .hn-list li a {
+                    padding: 6px 10px;
+                }
+
+                .favorites-container span:first-child {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #bacdd9; 
+                }
+            
+                .favorites-container span:last-child {
+                    font-size: 14px;
+                    font-weight: 200;
+                    color: #bacdd9; 
+                }
+
+            .contacts-container {
+                border-right: 1px solid #ffffff;
+                text-align: right;
+            }
+
+                .cc-content-1,
+                .cc-content-2 {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+
+                    .cc-content-1 span:first-child {
+                        display: block;
+                        font-size: 14px;
+                        color: #ffffff;
+                    }
+                
+                    .cc-content-1 span:nth-child(2) {
+                        display: block;
+                        font-size: 12px;
+                        color: #a8b8c6;
+                    }
+            
+                .cc-content-2 {
+                    color: #ffffff;
+                }
+            
+                .lang-container a,
+                .currency-container a {
+                    font-size: 13px;
+                    color: #a8b8c6;;
+                }
+            
+                .mybooking-container a{
+                    /*white-space: nowrap;*/
+                    color: #ffffff;
+                    display: block;
+                    border: 1px solid #a8b8c6;
+                    border-radius: 8px;
+                }
 
 
-.header-nav{
-    display: table;
-    width:100%;
-    height: 64px;
-    background-color:#1a5880;
-    text-align: center;
+
+
+
+/** Nav expanded menus **/
+
+
+
+ul li:before{
+height: 20px;
+width: 60px;
 }
 
-.header-nav-content {
-    display:table-cell;
-    vertical-align: middle;
+
+ul li:before{
+    
 }
 
 
-.logo-container,
-.hn-list{
-    display:inline-block;
-    vertical-align: middle;
-}
-
-.logo-container{
-    margin: 0;   
-    padding: 0;
-}
-
-.hn-list{
-    margin:0;
-    padding: 0;
-}
-
-.hn-list li{
-    display: inline-block;
-    padding: 8px 10px;
-    color: #fff;
-    vertical-align: middle;    
-}
-
-.hn-list li a {
-    color: #ffffff;
-    padding: 8px 10px;
-}
-
-.favorites-container span {
-    font-size:14px;
-    color: #a8b8c6; 
-}
 
 
-.contacts-container {
-    border-right: 1px solid #ffffff;
-    text-align: right;
-}
 
 
-.cc-content-1,
-.cc-content-2 {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.cc-content-1 span:first-child {
-    display:block;
-}
-
-.cc-content-1 span:nth-child(2) {
-    display:block;
-    font-size:12px;
-    color: #a8b8c6;
-}
 
 
-.mybooking-container a{
-    border: 1px solid #fff;
-    border-radius: 8px;
-}
 
-/** SPOTLIGHT **/
-/** SLIDESHOW **/
+
+
+/** Slideshow (Lower header) **/
 
 .spotlight {
-    background-color: #1a5880;
-}
-
-
-.header-banner {
     /** background-image: url("../img/header-background-1.png"); **/
+    background-color: #1a5880;
     height:486px;
 }
 
+    .hb-heading {
+        color: #ffffff;
+        text-align: center;
+        padding-top:120px;
+        padding-bottom:20px;
+    }
 
-.hb-heading {
-    color: #ffffff;
-    text-align: center;
-    padding-top:120px;
-    padding-bottom:20px;
+        .hb-heading h1 {
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+            display: inline-block;
+        }
+
+    .hb-benefits {
+        text-align: left;
+        color: #ffffff;
+        width: 100%;
+    }
+
+            .hb-benefits ul li {
+                padding-left: 25px;
+                font-size: 14.16px;
+                text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+            }
+
+            .hb-benefits ul li::before {
+                font-size: 15px;
+                font-family: FontAwesome;
+                content: "\f00c";
+                position: absolute;
+                left: 3px;
+            }
+
+/*.hb-benefits ul li:nth-child(4n) {*/
+/*    clear: right;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Hot deals in Milan from AVIS **/
+
+
+.slider-menu {
+    background-color: #efe3c5;
+    
 }
 
-.hb-heading h1 {
-    font-size: 48px;
-    margin: 0;
-    text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.45);
-    display: inline-block;
-}
+    .sm-header {
+        padding: 30px 0 15px;
+        color: #8d6a16 ;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+    
+    .sm-content {
+        background-color: #ffffff;
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    
+    .item-carousel {
+        display: block;
+        cursor: pointer;
+        margin: 0px;
+        color: #FFF;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        text-align: center;
+        -webkit-tap-highlight-color: rgba(255, 255, 255, 0); 
+    }
+    .item-carousel{
+    }
+    
+    .car-container {
+        margin: 16px 6px;
+        background-color: yellow;
+    }
+    
+    .car-container.active {
+        -webkit-box-shadow: 0px 4px 9px 0px rgba(50, 50, 50, 0.61);
+        -moz-box-shadow:    0px 4px 9px 0px rgba(50, 50, 50, 0.61);
+        box-shadow:         0px 4px 9px 0px rgba(50, 50, 50, 0.61);       
+        position:relative;
+        padding: 20px;
+        margin: -20px;
+        background: red;
+        z-index: 100;
+        opacity: 0.6;
+    }
+    .owl-item {
+        background-color: #f0f;
+    }
+    
+    
+    .sm-toplocations {
+        padding: 30px 0 15px;
+        text-align: center;        
+    }
+    
+        .sm-toplocations h4 {
+            font-weight: 600;
+            text-transform: uppercase;
+            color: #444444;
+            padding: 20px 8px 10px;
+        }
+    
+        .top-location-list li {
+            display: inline-block;
+            padding: 20px 8px 10px;
+        }
+        
+        .top-location-list li a {
+            font-weight: 400;
+            font-size: 16px;
+            color: #8d6a16;
+        }
+    
+    
 
 
 
 
-.hb-benefits {
+
+
+
+
+
+
+
+
+
+
+
+/** AVIS Customer Ratings in Milan **/
+
+.customer-reviews {
+    background-color: #ffffff;   
     text-align: left;
-    color: #ffffff;
-    width: 100%;
-}
-
-.hb-benefits ul li {
-    margin: 5px 0;
-    width: 25%;
-    float: left;
-    font-size: 14.16px;
-    text-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
-    padding-left: 20px;
-    position: relative;
-}
-
-.hb-benefits ul li::before {
-    font-size: 15px;
-    font-family: FontAwesome;
-    content: "\f00c";
-    position: absolute;
-    left: 3px;
+    padding-bottom: 15px;
 }
 
 
-.hb-benefits ul li:nth-child(4n) {
-    clear: right;
+    .cr-heading {
+        width: 100%;
+        padding: 45px 0 10px;
+    }
+    
+        .cr-heading-text {
+            width: 50%;
+            float: left;
+            display: inline-block;
+            text-align: left;
+        }
+        
+        .cr-heading-text h2 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 24px;
+        }
+        
+            .cr-heading-text h2 a {
+                margin: 0;
+                color: #0073b5;
+                text-decoration: underline;
+            }
+        
+        .cr-heading-logo {
+            width: 50%;
+            float: right;
+            display: inline-block;    
+            text-align: right;
+        }
+    
+    .cr-main-content{
+        padding: 25px 0;
+        border-top: 4px solid #eeeeee;
+    }
+    
+        .cr-values {
+            float: left;
+            width: 33.3333333%;
+            text-align: center;
+        }
+        
+            .cr-score-total {
+            
+            }
+        
+                .cr-rating-value {
+                    color: #000000;
+                    font-size: 20px;
+                }
+        
+        
+                .cr-rating-count {
+                    padding-bottom: 15px;               
+                    font-size: 13px;
+                }
+                
+                .cr-rating-count a {
+                    color: #0073b5;
+                    text-decoration: underline;
+                }            
+        
+        
+            .cr-score-details {
+                color: #000000;
+                background-color: #f6f6f6;
+                text-align: center;
+                padding: 0 18px;
+            }
+      
+                .cr-question  {
+                    display: inline-block;
+                    padding: 5px 0;
+                    width: 100%;
+                    margin: 0;
+                    
+                }
+                
+                .cr-question dt {
+                    padding: 5px 0;
+                    float: left;
+                    display: inline-block;
+                    width: 80%;
+                    text-align: left;
+                    font-size: 13px;
+                    margin: 0;
+                }
+                
+                .cr-question dd {
+                    padding: 5px 0;
+                    float: right;
+                    display: inline-block;                
+                    width: 20%;
+                    text-align: right;  
+                    color: #0073b5;
+                    font-size: 15px;
+                    margin: 0;
+                }            
+    
+    
+                .cr-question:not(:last-child){
+                    border-bottom: 1px solid #dddddd; 
+                } 
+    
+         
+        
+        
+        
+        
+        .cr-reviews {
+            float: right;
+            width: 66.6666666%;
+            padding-left: 30px
+        }
+        
+            .cr-review-block {
+            display: block;
+            padding-bottom: 25px;
+            }
+            
+                .cr-review-row-1,
+                .cr-review-row-2,
+                .cr-review-row-3 {
+                    display: inline-block;
+                    width: 100%;
+                    padding: 8px 0;
+                    vertical-align: text-top;
+                }
+            
+                    .cr-review-person-info {
+                        display: inline-block;
+                        width: 100%;
+                    }
+                
+                        .cr-review-giver-name {
+                            padding-right: 10px;
+                            font-size: 14px;
+                            font-weight: 700;
+                        }
+                        
+                        .cr-review-location,
+                        .cr-review-date {
+                            padding-left: 5px;
+                            font-size: 12px;
+                            color: #777777;
+                        }
+                    
+                       .cr-review-giver-score {
+                            float: right;
+                            font-size: 18px;
+                            font-weight: 200;
+                            color: #1a5880;
+                       }     
+                
+                            .cr-review-giver-score-number {
+                                font-weight: 600;
+                            }
+            
+                .cr-review-row-2 {
+                 border-top: 1px dashed #dddddd;    
+                }
+ 
+                    .cr-review-plus,
+                    .cr-review-minus {
+                        display: inline-block;
+                        width: 50%;
+                        position: relative;
+                        padding: 0px 30px;
+                        font-size: 13px;
+                    } 
+            
+                    .cr-review-plus {
+                        float: left;
+                    }
+                    
+                    .cr-review-minus {
+                        float: right;
+                    }            
+            
+                    .cr-review-plus::before {
+                        color: #28960b;
+                        font-size: 15px;
+                        font-family: FontAwesome;
+                        content: "\f067";
+                        position: absolute;
+                        left: 3px;
+                    }   
+                
+                    .cr-review-minus::before {
+                        color: #960b0b;
+                        font-size: 15px;
+                        font-family: FontAwesome;
+                        content: "\f068";
+                        position: absolute;
+                        left: 3px;
+                    }       
+            
+                        .cr-reviews-more a {
+                            font-size: 13px;
+                            font-weight: 400;
+                            color: #0073b5;
+                            text-decoration: none;
+                        }
+
+
+
+
+
+
+
+
+/** Other car cities **/
+
+.other-cities {
+    background-color: #f6f6f6;   
+    text-align: left;
+    padding-bottom: 15px;
 }
 
+    .oc-content1 {
+        padding: 15px 0;
+    }
+
+    .oc-content2 {
+        border-top: 4px solid #dddddd;
+        text-align: left;
+        width: 100%;
+        border-bottom: 2px solid #dddddd;
+    }
+
+        .oc-content2 span {
+            font-weight: 600;
+        }
+        
+            .oc-content2 ul li {
+                padding: 12px 0;
+                font-size: 13px;
+                font-weight: 400;
+                margin-right: 30px;
+                border-bottom: 2px solid #dddddd; 
+            }
+
+            .oc-content2 ul li:last-child {
+               border-bottom: none;
+            }
+        
+            .oc-content2 ul:last-child li {
+                margin-right: 0px;
+            }
+
+                .oc-content2 ul li a {
+                    color: #444444;
+                }
+
+    .oc-content3 {
+        padding: 15px 0;
+    }
+
+        .oc-content3 a {
+            font-size: 13px;
+            font-weight: 200;
+            color: #777777;
+            text-decoration: none;
+        }
 
 
-/** other-car-rentals **/
+
+
+
+
+
+
+
+
+
+
+/** Other cars rental list **/
 
 .other-car-rentals {
     background-color: #d8e9f2;
@@ -250,12 +682,12 @@ header {
 }
 
 
-.ocr-content {
-    width: 13%;
-    display: inline-block;
-    padding: 30px 0 20px;
-    margin: 4px;
-}
+    .ocr-content {
+        width: 13%;
+        display: inline-block;
+        padding: 30px 0 20px;
+        margin: 4px;
+    }
 
 
 
@@ -263,7 +695,16 @@ header {
 
 
 
-/** economy-bookings **/
+
+
+
+
+
+
+
+
+
+/** Economy bookings **/
 
 .economy-bookings {
     background-color: #ffffff;
@@ -271,355 +712,408 @@ header {
     padding-bottom: 15px;
 }
 
-.economy-bookings i {
-    color: #0073b5;
-}
-
-.eb-content-1,
-.eb-content-2,
-.eb-content-3 {
-    width: 100%;
-    padding: 20px 0;
-}
-
-.eb-content-1 {
-    border-bottom: 5px solid #eeeeee;
-}
-
-.eb-content-1 h2 {
-    color: #777777;
-    font-weight: 400;
-}
-
-    
-    .eb-col-1,
-    .eb-col-2 {
-        text-align: left;
+/*** Echonomy bookings common styles ***/
+/*** color for checklist icons ***/
+    .economy-bookings i {
+        color: #0073b5;
     }
-    
-    .eb-col-1 {
-        width: 66.6666666%;
-        padding-left: 25px;
-        float:left;
+
+    .eb-content-1,
+    .eb-content-2,
+    .eb-content-3 {
+        width: 100%;
+        padding: 20px 0;
     }
-    
-    .eb-col-1 h3 {
-        color: #333333;
-        font-weight: 600;
-        margin-bottom: 20px;
-        margin-left: -25px;
+
+/*** Echonomy bookings heading ROW ***/
+    .eb-content-1 {
+        border-bottom: 5px solid #eeeeee;
     }
+
+        .eb-content-1 h2 {
+            color: #777777;
+            font-weight: 400;
+        }
+
+    /*** Echonomy bookings ROW 1 ***/
     
-        .eb-inner-col-1,
-        .eb-inner-col-2 {
-            width:50%;
-            font-size: 15px;
+        .eb-col-1,
+        .eb-col-2 {
+            text-align: left;
+        }
+    
+        .eb-col-1 {
+            width: 66.6666666%;
             float:left;
         }
-        
-        .eb-inner-col-1 ul,
-        .eb-inner-col-2 ul {
-            margin: 0;
-            padding: 0;
-        }
-        
-        .eb-inner-col-1 ul li,
-        .eb-inner-col-2 ul li {
-            padding: 0 70px 18px 0;
-            line-height: 20px;
-        }
-        
-        .eb-inner-col-2 img {
-            margin-left: -25px;
+    
+            .eb-col-1 h3 {
+                color: #333333;
+                font-weight: 600;
+                margin-bottom: 20px;
+            }
+    
+            .eb-inner-col-1,
+            .eb-inner-col-2 {
+                width:50%;
+                font-size: 15px;
+                float:left;
+            }
+                
+                .fa-ul,
+                .fa-ul {
+                    margin: 0;
+                    padding: 0 25px;
+                }
+                
+                .fa-ul li,
+                .fa-ul li {
+                    padding: 0 0 18px 0;
+                    line-height: 20px;
+                }    
+                
+                    .fa-ul img {
+                        margin-left: -25px;
+                    }               
+    
+        .eb-col-2 {
+            width: 33.3333333%;
+            float:left;
         }
     
+            .eb-inner-col-3 {
+                width:100%;
+                padding: 8px 32px;
+                border: 1px dashed #bccad7;
+            }
+        
+                .eb-inner-row-1,
+                .eb-inner-row-2,
+                .eb-inner-row-3 {
+                    padding: 5px 0;
+                }
+            
+                    .eb-inner-row-1 h6 {
+                        float: left;
+                    }
+            
+                    .eb-inner-row-1 .stars { !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                        display:inline-block;
+                        float: right;
+                    }
+            
+                    .eb-inner-row-3 a {
+                        color: #0073b5;
+                        float: left;
+                    }
+            
+                    .eb-inner-row-3 img {
+                        float: right;
+                    }
+        
+    /*** Echonomy bookings ROW 2 ***/
     
-    .eb-col-2 {
+        .eb-col-3 {
+        height: 204px;    
+        background-color: #eeeeee;
+        padding: 20px 0;
         width: 33.3333333%;
         float:left;
-    }
+        }    
     
-        .eb-inner-col-3 {
-            width:100%;
-            padding: 8px 32px;
-            border: 1px dashed #bccad7;
-        }
-        
-            .eb-inner-row-1,
-            .eb-inner-row-2,
-            .eb-inner-row-3 {
-                padding: 5px 0;
-            }
-            
-            
-            .eb-inner-row-1 h6 {
-                float: left;
-            }
-            
-            .eb-inner-row-1 .stars { !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                display:inline-block;
-                float: right;
-            }
-            
-            .eb-inner-row-3 a {
-                color: #0073b5;
-                float: left;
-            }
-            
-            .eb-inner-row-3 img {
-                float: right;
-            }
-        
+            .eb-col-3:nth-child(2) {
+            background-color: #dddddd;
+            }   
     
-    .eb-col-3 {
-    height: 204px;    
-    background-color: #eeeeee;
-    padding: 20px 0;
-    width: 33.3333333%;
-    float:left;
-    }    
+            .eb-col-3:nth-child(2) p {
+            font-size: 15px;
+            padding: 10px 0;
+            }    
+
+            .eb-col-3:nth-child(2) a {
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px;
+            }   
+
+                .eb-col-3 i {
+                    color: #6e6e6e;
+                }
+
+                .eb-col-3 a {
+                    color: #3d87bd;
+                    text-decoration: underline;
+                }
+
+                .eb-col-3 h2 {
+                    color: #0073b5;
+                    padding-bottom: 10px;
+                    border-bottom: 2px dashed #b1b1b1;
+                    display: inline-block;
+                }
     
-    .eb-col-3:nth-child(2) {
-    background-color: #dddddd;
-    }   
+                .eb-col-3 h4 {
+                    color: #444444;
+                }
+
+                .eb-col-3 p {
+                    color: #646464;
+                    padding: 7px;
+                }
     
-    .eb-col-3:nth-child(2) p {
-    font-size: 15px;
-    padding: 10px 0;
-    }    
+                .eb-col-3 input {
+                    width: 260px;
+                    height: 42px;
+                    padding: 10px;
+                }
 
-    .eb-col-3:nth-child(2) a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px;
-    }   
-
-    .eb-col-3 i {
-        color: #6e6e6e;
-    }
-
-    .eb-col-3 a {
-        color: #3d87bd;
-        text-decoration: underline;
-    }
-
-    .eb-col-3 h2 {
-        color: #0073b5;
-        padding-bottom: 10px;
-        border-bottom: 2px dashed #b1b1b1;
-        display: inline-block;
-    }
+                    .btn-blu {
+                      -webkit-border-radius: 8;
+                      -moz-border-radius: 8;
+                      border-radius: 6px;
+                      font-family: Arial;
+                      color: #ffffff;
+                      font-size: 16px;
+                      background: #0073b5;
+                      margin: 14px 0;
+                      padding: 10px 20px 10px 20px;
+                      text-decoration: none;
+                      border: none;
+                      width: 260px;
+                    }
     
-    .eb-col-3 h4 {
-        color: #444444;
-    }
-
-    .eb-col-3 p {
-        color: #646464;
-        padding: 7px;
-    }
-    
-    .eb-col-3 input {
-        width: 260px;
-        height: 42px;
-        padding: 10px;
-    }
-
-    .btn-blu {
-      -webkit-border-radius: 8;
-      -moz-border-radius: 8;
-      border-radius: 6px;
-      font-family: Arial;
-      color: #ffffff;
-      font-size: 16px;
-      background: #0073b5;
-      margin: 14px 0;
-      padding: 10px 20px 10px 20px;
-      text-decoration: none;
-      border: none;
-      width: 260px;
-    }
-    
-    .btn-blu:hover {
-      background: #3cb0fd;
-      text-decoration: none;
-    }
+                        .btn-blu:hover {
+                          background: #3cb0fd;
+                          text-decoration: none;
+                        }
 
 
-/* FOOTER */
 
 
-/** UPPER FOOTER **/
-.upper-footer {
-    background-image: url("../img/upper-footer-bg2.png");
-    height: 604px;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/** Footer **/
+
+
+/*** Upper footer (bildi ar min-height bez telefona, telefonu ar absolute + z-index ***/
+.upper-footer-1 {
+    background-image: url("../img/upper-footer-background.png");
+    height: 500px;
 }
 
     .uf-container {
+        position: relative;
         padding: 40px 0 15px;
     }
     
-    /*** upper footer heading style ***/
-    .uf-container h1 {
-        margin:0;
-        color: #ffffff;
-        font-size: 60px;
-        font-weight:200;
-        line-height: 70px;
-    }
+        .phone-img {
+            position: absolute;
+            top: 28px;
+            right: 28px;
+        }
     
-    /*** upper footer text style ***/
-    .uf-container p {
-        margin:0;
-        color: #ffffff;
-        font-size: 18px;
-        font-weight:200;
-        padding: 30px 0;
-        line-height: 28px;
-    }
+        /*** upper footer heading style ***/
+        .uf-container h1 {
+            margin:0;
+            color: #ffffff;
+            font-size: 60px;
+            font-weight:200;
+            line-height: 70px;
+        }
     
-    /*** white google play & app button styles ***/
-    .uf-container button {
-        padding: 14px 54px 36px 79px;
-        border-radius: 10px;
-        border: none;
-        background-color: #fff;
-        margin-right: 15px;
-        position: relative;
-    }
+        /*** upper footer text style ***/
+        .uf-container p {
+            margin:0;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight:200;
+            padding: 30px 0;
+            line-height: 28px;
+        }
+        
+        .button-container {
+            display: inline-block;
+        }
+        
+        .rating-container {
+            padding: 15px 0;
+            text-align: center;
+        }
+        
+        .rating-container span {
+            color: yellow;
+        }
     
-    .uf-container button span {
-        display:inline-block;
-        left: 83px;
-        top: 10px;
-        font-weight: 600;
-        font-size: 13px;
-        text-transform: uppercase;
-        color: #0579c1;
-    }
+            /*** white google play & app button styles ***/
+            .google-play-btn,
+            .appstore-btn {
+                display: block;
+                padding: 14px 54px 36px 79px;
+                border-radius: 10px;
+                border: none;
+                background-color: #fff;
+                margin-right: 15px;
+                position: relative;
+            }
     
-    .uf-container .button-icon {
-        position:absolute;
-        left: 22px;
-        bottom: 14px;
-    }
+                .uf-container button span {
+                    display:inline-block;
+                    left: 83px;
+                    top: 10px;
+                    font-weight: 600;
+                    font-size: 13px;
+                    text-transform: uppercase;
+                    color: #0579c1;
+                }
     
-    .uf-container .button-text {
-        position: absolute;
-        left: 78px;
-        bottom: 10px;
-    }
+                .uf-container .button-icon {
+                    position:absolute;
+                    left: 22px;
+                    bottom: 14px;
+                }
     
+                .uf-container .button-text-img {
+                    position: absolute;
+                    left: 78px;
+                    bottom: 10px;
+                }
     
+
+.upper-footer-2 {
+    height: 104px;
+    background-color: #444444;
+}
+
     /*** auto rental & CRN buttons ***/
-    .uf-container .partners-btn {
+    .partners-btn {
         display: inline-block;
         position: relative;
-        top: 140px;
+        top: 35px;
         vertical-align: text-top;
         margin-right: 70px;
     }
 
 
-/** MIDDLE FOOTER **/
+/*** Middle footer ***/
 
 .middle-footer {
-    height: 222px;
+    height: 244px;
     background-color: #555555;
 }
 
     /*** footer navigation ***/
     .footer-nav {
-        margin-top: 10px;
+        margin-top: 15px;
+        width: 65%;
         float: left;
+        text-align: left;
     }
-
-        .footer-nav-list {
+    
+        .footer-nav ul {
+            margin-right: -90px;
+            padding-right: 20px;
+            width: 220px;
             display: inline-block;
-            margin-right:45px;
-            max-width: 180px;
             vertical-align: text-top;
         }
 
-        .footer-nav-list a:first-child {
+        .footer-nav ul a:first-child {
             margin: 15px 0;
             color: #cccccc;
             font-size: 18px;
             display:block;
         }
     
-        .footer-nav-list a{
+        .footer-nav ul a{
             margin: 8px 0;
             color: #fff;
             font-size: 12px;
             display:block;
         }
     
-    /*** footer social icons ***/
-    .icon-container {
+    /*** footer form ***/
+    .footer-form {
         margin-top: 10px;
-        float: left;
-    }
-        
-        .footer-nav-icon-list a {
-            color: #c2c2c2;
-            margin: 20px 0 0 20px;
-            display: block;
-        }
-
-
-    /*** footer subscribe form ***/
-    .subscribe-container {
-        margin-top: 15px;
-        padding: 18px 15px;
+        width: 35%;
         float: right;
-        width: 240px;
-        height: 190px;
-        background-color: #444444;
-        text-align: center;
+        text-align: right;
     }
-    
-        .subscribe-container h5 {
+        
+        /*** footer social icons -FB- -YouTube -GooglePlus- ***/
+        .footer-form-icon-list {
+            display: inline-block;
             text-align: left;
-            color: #f6f6f6;
-            font-weight: 400;
         }
         
-        .subscribe-container p {
-            font-size: 12px;
-            text-align: left;
-            color: #cccccc;
-            padding:5px 0px 10px;
-        }        
+            .footer-form-icon-list a {
+                display: block;
+                color: #c2c2c2;
+                margin: 0px 40px 20px 0px;
+            }
+
+
+        /*** footer subscribe form ***/
+        .subscribe-container {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 14px 17px;
+            background-color: #444444;
+            text-align: center;
+        }
     
-        .subscribe-container input {
-          width: 200px;
-          height: 32px;
-          padding: 8px;
-        }
+            .subscribe-container h5 {
+                text-align: left;
+                color: #f6f6f6;
+                font-weight: 400;
+            }
+        
+            .subscribe-container p {
+                font-size: 12px;
+                text-align: left;
+                color: #cccccc;
+                padding:5px 0px 10px;
+            }        
     
-        .btn-yellow {
-            -webkit-border-radius: 8;
-            -moz-border-radius: 8;
-            border-radius: 6px;
-            font-family: Arial;
-            color: #ffffff;
-            font-size: 16px;
-            background: #f2a622;
-            margin: 14px auto;
-            padding: 8px 20px 10px 20px;
-            text-decoration: none;
-            border: none;
-            width: 201px;
-            height: 32px;
-        }
+            .subscribe-container input {
+              width: 200px;
+              height: 32px;
+              padding: 8px;
+            }
+    
+                .btn-yellow {
+                    -webkit-border-radius: 8;
+                    -moz-border-radius: 8;
+                    border-radius: 6px;
+                    font-family: Arial;
+                    color: #ffffff;
+                    font-size: 16px;
+                    background: #f2a622;
+                    margin: 14px auto;
+                    padding: 8px 20px 10px 20px;
+                    text-decoration: none;
+                    border: none;
+                    width: 201px;
+                    height: 32px;
+                }
         
-        .btn-yellow:hover {
-            background: #f2c922;
-            text-decoration: none;
-        }
+                    .btn-yellow:hover {
+                        background: #f2c922;
+                        text-decoration: none;
+                    }
         
-/** LOWER FOOTER **/    
+/*** Lower footer ***/    
     
 .lower-footer {
     background-image: url("../img/lower-footer-bg.png");
@@ -629,12 +1123,12 @@ header {
     .lf-container-2,
     .lf-container-3 {
         display:inline-block;
-        padding: 15px 0;
         font-size: 12px;
         width: 33.3333333%;
     }
     
     .lf-container-1 {
+        padding: 34px 0;
         float:left;
     }
     
@@ -646,9 +1140,11 @@ header {
     .lf-container-2 {
         float: left;
         text-align: center;
+        padding-top: 0;
     }
     
     .lf-container-3 {
+        padding: 20px 0;
         float: right;
         text-align: right;
     }
@@ -662,60 +1158,65 @@ header {
     
     
     
-        /*** black google play & app button styles ***/
-    .lf-container-2 .bl-google-play-btn {
-        margin: 15px 0;
+    /*** black google play & app button styles ***/
+    .bl-appstore-btn {
+        margin: 29px 15px 0;
         border-radius: 10px;
         border: 1px solid #919191;
         background-color: #000000;
-        margin-right: 15px;
         position: relative;
         padding: 3px 22px 23px 40px;
     }
-    
-    .lf-container-2 .bl-appstore-btn {
-        margin: 15px 0;
+
+    .bl-google-play-btn {
+        margin: 29px 15px 0;
         border-radius: 10px;
         border: 1px solid #919191;
         background-color: #000000;
-        margin-right: 15px;
         position: relative;
-        padding: 3px 8px 23px 29px;
+        padding: 3px 12px 23px 29px;
     }
     
-    .bl-google-play-btn span {
-        display:inline-block;
-        left: 40px;
-        top: 2px;
-        text-align:left;
-        font-size: 9px;
-        color: #ffffff;
-    }
+        .bl-appstore-btn span {
+            display:inline-block;
+            left: 40px;
+            top: 2px;
+            text-align:left;
+            font-size: 9px;
+            color: #ffffff;
+        }
     
-    .bl-appstore-btn span {
-        display:inline-block;
-        left: 29px;
-        top: 1px;
-        text-align:left;        
-        font-size: 9px;
-        text-transform: uppercase;
-        color: #ffffff;
-    }
+        .bl-google-play-btn span {
+            display:inline-block;
+            left: 29px;
+            top: 1px;
+            text-align:left;        
+            font-size: 9px;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
     
-    .lf-container-2 .bl-button-icon {
-        position: absolute;
-        left: 13px;
-        bottom: 10px;
-    }
+        .bl-button-icon {
+            position: absolute;
+            left: 13px;
+            bottom: 10px;
+        }
     
-    .lf-container-2 .bl-button-icon2 {
-        position: absolute;
-        left: 6px;
-        bottom: 3px;
-    }
+        .bl-button-text {
+            position:absolute;
+            left: 40px;
+            bottom: 3px;
+        }
+        
+        .bl-button-icon-text {
+            position: absolute;
+            left: 6px;
+            bottom: 3px;
+        }
     
-    .lf-container-2 .bl-button-text {
-        position:absolute;
-        left: 40px;
-        bottom: 3px;
+    
+    /*** PLUGIN CSS ***/
+    
+    .js-stars {
+        display: inline-block;
     }
